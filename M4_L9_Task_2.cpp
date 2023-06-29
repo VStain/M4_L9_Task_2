@@ -55,18 +55,53 @@ int main()
 
     Figure figure;
 
-    //Triangle triangle(10, 20, 30, 80, 60);
-    //Print_info(&triangle);
+    int a_side = 0;
+    int b_side = 0;
+    int c_side = 0;
+    int A_angle = 0;
+    int B_angle = 0;
+    int C_angle = 0;
 
-    Right_Triangle right_triangle(10, 20, 30, 50);
+    cout << "Введите значение a_side: ";
+    cin >> a_side;
+
+    cout << "Введите значение b_side: ";
+    cin >> b_side;
+
+    cout << "Введите значение с_side: ";
+    cin >> c_side;
+
+    cout << "Введите значение A_angle: ";
+    cin >> A_angle;
+
+    cout << "Введите значение B_angle: ";
+    cin >> B_angle;
+
+    cout << "Введите значение B_angle: ";
+    cin >> C_angle;
+    
+
+    Triangle triangle(a_side, b_side, c_side, A_angle, B_angle, C_angle);
+    Print_info(&triangle);
+
+   /* cout << "Прямоугольный треугольник " << "(стороны " << a_side << ", " << b_side << ", " << c_side << "; углы "
+        << A_angle << ", " << B_angle << ", "  << C_angle << " ) создан " << endl;*/
+
+    Right_Triangle right_triangle(a_side, b_side, c_side, A_angle, B_angle, C_angle);
     Print_info(&right_triangle);
 
-    /*Isosceles_Triangle isosceles_triangle(10, 20, 50, 60);
+    Isosceles_Triangle isosceles_triangle(a_side, b_side, c_side, A_angle, B_angle, C_angle);
     Print_info(&isosceles_triangle);
 
-    Equilateral_Triangle Equilateral_Triangle(30, 60);
+    Equilateral_Triangle Equilateral_Triangle(a_side, b_side, c_side, A_angle, B_angle, C_angle);
     Print_info(&Equilateral_Triangle);
 
+
+
+
+    // В разработке 
+
+    /*
     Quadrangle Quadrangle(10, 20, 30, 40, 50, 60, 70, 180);
     Print_info(&Quadrangle);
 

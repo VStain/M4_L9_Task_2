@@ -130,7 +130,6 @@
     <ClCompile Include="Class_Figure.cpp" />
     <ClCompile Include="Class_RightTriangle.h.cpp" />
     <ClCompile Include="Class_Triangle.cpp" />
-    <ClCompile Include="Domain_error.cpp" />
     <ClCompile Include="Equilateral_Triangle.cpp" />
     <ClCompile Include="Isosceles_Triangle.cpp" />
     <ClCompile Include="M4_L9_Task_2.cpp" />
