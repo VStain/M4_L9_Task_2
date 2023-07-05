@@ -21,7 +21,6 @@ Triangle::Triangle(int a_side, int b_side, int c_side, int A_angle, int B_angle,
     catch (const InvalidParameterError_180& ex) { cout << ex.what() << endl; }
     catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
     Print_info();
-    //C_angle = 180 - A_angle - B_angle;  // убираем старую защиту на проверку углов
 }
 
 void Triangle::Print_info()
