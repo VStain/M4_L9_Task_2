@@ -6,6 +6,18 @@ Equilateral_Triangle::Equilateral_Triangle(int a_side, int b_side, int c_side, i
     : Triangle(a_side, b_side, c_side, A_angle, B_angle, C_angle)
 {
     name = "Равносторонний треугольник ";
+    if (A_angle != 60 || B_angle != 60 || C_angle != 60)
+    {
+        throw InvalidParameterError_Angle_60();
+    }
+    if (a_side != b_side || a_side != c_side)
+    {
+        throw InvalidParameterError_all_sides_are_not_equal();
+    }
+    if (A_angle + B_angle + C_angle != 180)
+    {
+        throw InvalidParameterError_180();
+    }
 }
 /* { // Альтернативный вариант записи
     name = "Равносторонний треугольник ";
@@ -18,17 +30,10 @@ Equilateral_Triangle::Equilateral_Triangle(int a_side, int b_side, int c_side, i
 void Equilateral_Triangle::Print_info()
 {
     cout << endl << "Название фигуры: " << name << endl;
-    try
-    {
-        cout << (check() ? "Параметры верны" : "Параметры неверны ") << endl;
-        cout << "Количество сторон: " << sides_count << endl;
-        cout << "Стороны: a = " << a_side << " b = " << b_side << " c = " << c_side << endl;
-        cout << "Углы: A = " << A_angle << " B = " << B_angle << " C = " << C_angle << endl << endl;
-    }
-    catch (InvalidParameterError_180& ex) { cout << ex.what() << endl; }
-    catch (InvalidParameterError_all_sides_are_not_equal& ex) { cout << ex.what() << endl; }
-    catch (InvalidParameterError_Angle_60& ex) { cout << ex.what() << endl; }
-    catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
+    cout << (check() ? "Параметры верны" : "Параметры неверны ") << endl;
+    cout << "Количество сторон: " << sides_count << endl;
+    cout << "Стороны: a = " << a_side << " b = " << b_side << " c = " << c_side << endl;
+    cout << "Углы: A = " << A_angle << " B = " << B_angle << " C = " << C_angle << endl << endl;
 }
 
 bool Equilateral_Triangle::check()

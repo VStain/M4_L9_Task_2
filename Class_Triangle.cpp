@@ -11,16 +11,10 @@ Triangle::Triangle(int a_side, int b_side, int c_side, int A_angle, int B_angle,
     this->A_angle = A_angle;
     this->B_angle = B_angle;
     this->C_angle = C_angle;
-    try
+    if (A_angle + B_angle + C_angle != 180)
     {
-        if (A_angle + B_angle + C_angle != 180)
-        {
-            throw InvalidParameterError_180();
-        }
+        throw InvalidParameterError_180();
     }
-    catch (const InvalidParameterError_180& ex) { cout << ex.what() << endl; }
-    catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
-    Print_info();
 }
 
 void Triangle::Print_info()
@@ -37,7 +31,6 @@ bool Triangle::check()
    if (A_angle + B_angle + C_angle != 180)
    {
       return false;
-      throw InvalidParameterError_180();
    }
    return true;
  

@@ -81,27 +81,52 @@ int main()
     cin >> C_angle;
     */
 
-     Triangle triangle(10, 10, 10, 20, 20, 20);
+    cout << "Треугольник " << endl;
+    
+    try
+    {
+        Triangle triangle(10, 10, 10, 60, 60, 90);
+        Print_info(&triangle);
+    }
+     catch (const InvalidParameterError_180& ex) { cout << ex.what() << endl; }
+     catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
+
+     cout << endl << "Прямогольник " << endl;
+     try 
+     {
+         Right_Triangle right_triangle(10, 10, 10, 60, 60, 60);
+         Print_info(&right_triangle);
+     }
+     catch (const InvalidParameterError_90& ex) { cout << ex.what() << endl; }
+     catch (const InvalidParameterError_180& ex) { cout << ex.what() << endl; }
+     catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
+
+     cout << endl << "Равнобедренный треугольник " << endl;
+     try
+     {
+         Isosceles_Triangle isosceles_triangle(10, 10, 20, 60, 60, 60);
+         Print_info(&isosceles_triangle);
+     }
+     catch (const InvalidParameterError_180& ex) { cout << ex.what() << endl; }
+     catch (const InvalidParameterError_Side_A_C& ex) { cout << ex.what() << endl; }
+     catch (const InvalidParameterError_Angle_A_C& ex) { cout << ex.what() << endl; }
+     catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
+
+     cout << endl << "Равносторонний треугольник " << endl;
+     try
+     {
+         Equilateral_Triangle Equilateral_Triangle(10, 10, 20, 60, 60, 60);
+         Print_info(&Equilateral_Triangle);
+     }
+     catch (InvalidParameterError_180& ex) { cout << ex.what() << endl; }
+     catch (InvalidParameterError_all_sides_are_not_equal& ex) { cout << ex.what() << endl; }
+     catch (InvalidParameterError_Angle_60& ex) { cout << ex.what() << endl; }
+     catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
 
 
 
 
-   /* cout << "Прямоугольный треугольник " << "(стороны " << a_side << ", " << b_side << ", " << c_side << "; углы "
-        << A_angle << ", " << B_angle << ", "  << C_angle << " ) создан " << endl;*/
-
-    //Right_Triangle right_triangle(a_side, b_side, c_side, A_angle, B_angle, C_angle);
-    //Print_info(&right_triangle);
-
-   // Isosceles_Triangle isosceles_triangle(a_side, b_side, c_side, A_angle, B_angle, C_angle);
-    //Print_info(&isosceles_triangle);
-
-    //Equilateral_Triangle Equilateral_Triangle(a_side, b_side, c_side, A_angle, B_angle, C_angle);
-    //Print_info(&Equilateral_Triangle);
-
-
-
-
-    // В разработке 
+    // В разработке...
 
     /*
     Quadrangle Quadrangle(10, 20, 30, 40, 50, 60, 70, 180);
@@ -119,6 +144,8 @@ int main()
     Rhomb Rhomb(30, 30, 40);
     Print_info(&Rhomb);
     */
+
+     //a_side, b_side, c_side, A_angle, B_angle, C_angle
 
     return 0;
 }
