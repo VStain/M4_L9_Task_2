@@ -4,7 +4,7 @@
     void Figure::Print_info()
     {
         cout << "Название фигуры: " << name << endl;
-        cout << (check() ? "Правильная" : "Неправильная") << endl;
+        //cout << (check() ? "Правильная" : "Неправильная") << endl;
         cout << "Количество сторон: " << sides_count << endl;
     }
 

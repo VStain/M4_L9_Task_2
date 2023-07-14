@@ -7,6 +7,7 @@ public:
     const char* what() const override { return "Ошибка создания фигуры. "; }
 };
 
+// Исключения для треугольников
 
 class InvalidParameterError_180 : public exception
 {
@@ -42,4 +43,30 @@ class InvalidParameterError_Angle_60 : public exception
 {
 public:
     const char* what() const override { return "Ошибка создания фигуры. Один из углов или все углы не равны 60 "; }
+};
+
+// Исключения для четырехугольников 
+
+class InvalidParameterError_360 : public exception
+{
+public:
+    const char* what() const override { return "Ошибка создания фигуры. Причина: сумма углов не равна 360 "; }
+};
+
+class InvalidParameterError_Angle_90 : public exception
+{
+public:
+    const char* what() const override { return "Ошибка создания фигуры. Один из углов или все углы не равны 90 "; }
+};
+
+class InvalidParameterError_Side_A_C_B_D : public exception
+{
+public:
+    const char* what() const override { return "Ошибка создания фигуры. Причина: Стороны A, C или B, D попарно не равны "; }
+};
+
+class InvalidParameterError_Angle_A_C_B_D : public exception
+{
+public:
+    const char* what() const override { return "Ошибка создания фигуры. Причина: Углы A, C или B, D попарно не равны "; }
 };

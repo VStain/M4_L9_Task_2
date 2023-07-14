@@ -81,15 +81,16 @@ int main()
     cin >> C_angle;
     */
 
-    cout << "Треугольник " << endl;
+    /*
     
+    cout << "Треугольник " << endl;
     try
     {
         Triangle triangle(10, 10, 10, 60, 60, 90);
         Print_info(&triangle);
     }
-     catch (const InvalidParameterError_180& ex) { cout << ex.what() << endl; }
-     catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
+    catch (const exception& ex) { cout << ex.what() << endl; }
+    catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
 
      cout << endl << "Прямогольник " << endl;
      try 
@@ -97,8 +98,7 @@ int main()
          Right_Triangle right_triangle(10, 10, 10, 60, 60, 60);
          Print_info(&right_triangle);
      }
-     catch (const InvalidParameterError_90& ex) { cout << ex.what() << endl; }
-     catch (const InvalidParameterError_180& ex) { cout << ex.what() << endl; }
+     catch (const exception& ex) { cout << ex.what() << endl; }
      catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
 
      cout << endl << "Равнобедренный треугольник " << endl;
@@ -107,9 +107,7 @@ int main()
          Isosceles_Triangle isosceles_triangle(10, 10, 20, 60, 60, 60);
          Print_info(&isosceles_triangle);
      }
-     catch (const InvalidParameterError_180& ex) { cout << ex.what() << endl; }
-     catch (const InvalidParameterError_Side_A_C& ex) { cout << ex.what() << endl; }
-     catch (const InvalidParameterError_Angle_A_C& ex) { cout << ex.what() << endl; }
+     catch (const exception& ex) { cout << ex.what() << endl; }
      catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
 
      cout << endl << "Равносторонний треугольник " << endl;
@@ -118,34 +116,59 @@ int main()
          Equilateral_Triangle Equilateral_Triangle(10, 10, 20, 60, 60, 60);
          Print_info(&Equilateral_Triangle);
      }
-     catch (InvalidParameterError_180& ex) { cout << ex.what() << endl; }
-     catch (InvalidParameterError_all_sides_are_not_equal& ex) { cout << ex.what() << endl; }
-     catch (InvalidParameterError_Angle_60& ex) { cout << ex.what() << endl; }
+     catch (const exception& ex) { cout << ex.what() << endl; }
      catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
 
-
-
-
-    // В разработке...
-
-    /*
-    Quadrangle Quadrangle(10, 20, 30, 40, 50, 60, 70, 180);
-    Print_info(&Quadrangle);
-
-    Rectangle Rectangle(10, 20, 90);
-    Print_info(&Rectangle);
-
-    Square Square(20, 90);
-    Print_info(&Square);
-
-    Parallelogram Parallelogram(20, 30, 30, 40);
-    Print_info(&Parallelogram);
-
-    Rhomb Rhomb(30, 30, 40);
-    Print_info(&Rhomb);
     */
 
-     //a_side, b_side, c_side, A_angle, B_angle, C_angle
+
+     cout << endl << "Четырехугольник " << endl;
+     try
+     {
+         Quadrangle Quadrangle(10, 20, 30, 40, 100, 50, 50, 60);
+         Print_info(&Quadrangle);
+     }
+     catch (const exception& ex) { cout << ex.what() << endl; }
+     catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
+
+     cout << endl << "Прямоугольник " << endl;
+     try
+     {
+         Rectangle Rectangle(10, 20, 30, 40, 100, 60, 100, 100);
+         Print_info(&Rectangle);
+     }
+     catch (const exception& ex) { cout << ex.what() << endl; }
+     catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
+
+     cout << endl << "Квадрат " << endl;
+     try
+     {
+         Square Square(10, 10, 10, 10, 100, 60, 100, 100);
+         Print_info(&Square);
+     }
+     catch (const exception& ex) { cout << ex.what() << endl; }
+     catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
+
+    cout << endl << "Параллелограмм " << endl;
+    try
+    {
+        Parallelogram Parallelogram(30, 30, 30, 30, 100, 60, 100, 100);
+        Print_info(&Parallelogram);
+    }
+    catch (const exception& ex) { cout << ex.what() << endl; }
+    catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
+
+
+    cout << endl << "Ромб " << endl;
+    try
+    {
+        Rhomb Rhomb(10, 10, 10, 10, 100, 60, 100, 100);
+        Print_info(&Rhomb); 
+    }
+    catch (const exception& ex) { cout << ex.what() << endl; }
+    catch (...) { cout << "Неизвестная ошибка! До свидания" << std::endl; }
+
 
     return 0;
+
 }
